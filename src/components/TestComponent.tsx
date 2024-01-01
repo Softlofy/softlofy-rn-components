@@ -4,6 +4,7 @@ import useColors from '../contexts/ColorContext/useColors';
 import useSnackBar from '../contexts/SnackBarContext/useLoading';
 
 import Button from './Button';
+import Spacer from './Spacer';
 
 const TestComponent = () => {
   const theme = useColors();
@@ -11,6 +12,7 @@ const TestComponent = () => {
 
   return (
     <View>
+      <Spacer height={100} />
       <Button
         title="test"
         variant="outline"
