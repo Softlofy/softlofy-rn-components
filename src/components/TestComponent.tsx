@@ -1,15 +1,22 @@
-import {View, Button} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import useColors from '../contexts/ColorContext/useColors';
-import useLoading from '../contexts/LoadingContext/useLoading';
+import useSnackBar from '../contexts/SnackBarContext/useLoading';
+
+import Button from './Button';
 
 const TestComponent = () => {
   const theme = useColors();
-  const {setIsLoading, isLoading} = useLoading();
+  const {showSnackBar} = useSnackBar();
 
   return (
     <View>
-      <Button title={theme.red} onPress={() => setIsLoading(!isLoading)} />
+      <Button
+        title="test"
+        variant="outline"
+        themeColor="red"
+        onPress={() => showSnackBar('test', 'error')}
+      />
     </View>
   );
 };

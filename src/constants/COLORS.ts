@@ -1,6 +1,8 @@
 import {TColors} from '../types/theme';
 
 const COLORS: TColors = {
+  white: '#ffffff',
+  black: '#000000',
   slate: '#f1f5f9',
   gray: '#e2e8f0',
   zinc: '#f4f4f4',

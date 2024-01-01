@@ -1,6 +1,7 @@
 import React from 'react';
 import ColorArea from './contexts/ColorContext';
 import LoadingArea from './contexts/LoadingContext';
+import SnackBarArea from './contexts/SnackBarContext';
 
 type TProps = {
   children: React.ReactNode;
@@ -9,7 +10,9 @@ type TProps = {
 const Wrapper = (props: TProps) => {
   return (
     <ColorArea>
-      <LoadingArea>{props.children}</LoadingArea>
+      <SnackBarArea>
+        <LoadingArea>{props.children}</LoadingArea>
+      </SnackBarArea>
     </ColorArea>
   );
 };
