@@ -2,7 +2,7 @@ import {Text, TextStyle} from 'react-native';
 import React from 'react';
 import {TTextAlign} from '../types/textAlign';
 import {TFontWeight} from '../types/fontWeight';
-import useColors from '../contexts/ColorContext/useColors';
+import useAccentColor from '../hooks/useAccentColor';
 
 export type TTypographyBase = {
   children: React.ReactNode;
@@ -15,12 +15,12 @@ export type TTypographyBase = {
 };
 
 export default function Typography(props: TTypographyBase) {
-  const colors = useColors();
+  const accentColor = useAccentColor();
 
   const style: TextStyle = {
     fontSize: props.fontSize || 14,
     textAlign: props.textAlign || 'left',
-    color: props.color || colors.cyan,
+    color: props.color || accentColor,
     fontWeight: props.fontWeight || 'normal',
     margin: 0,
     flex: props.flex || 0,

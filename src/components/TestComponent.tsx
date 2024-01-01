@@ -1,25 +1,20 @@
-import {View} from 'react-native';
 import React from 'react';
 import useColors from '../contexts/ColorContext/useColors';
-import useSnackBar from '../contexts/SnackBarContext/useLoading';
-
-import Button from './Button';
-import Spacer from './Spacer';
+import Tag from './Tag';
+import FlexContainer from './FlexContainer';
+import ScrollableScreenContainer from './ScrollableScreenContainer';
 
 const TestComponent = () => {
   const theme = useColors();
-  const {showSnackBar} = useSnackBar();
 
   return (
-    <View>
-      <Spacer height={100} />
-      <Button
-        title="test"
-        variant="outline"
-        themeColor="red"
-        onPress={() => showSnackBar('test', 'error')}
-      />
-    </View>
+    <ScrollableScreenContainer
+      screenTitleProps={{title: 'test', showBackButton: true}}
+      paddingHorizontal={10}>
+      <FlexContainer>
+        <Tag tag="test" backgroundColor={theme.amber} />
+      </FlexContainer>
+    </ScrollableScreenContainer>
   );
 };
 

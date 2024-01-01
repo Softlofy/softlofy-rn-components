@@ -2,6 +2,7 @@ import React from 'react';
 import ColorArea from './contexts/ColorContext';
 import LoadingArea from './contexts/LoadingContext';
 import SnackBarArea from './contexts/SnackBarContext';
+import {NavigationContainer} from '@react-navigation/native';
 
 type TProps = {
   children: React.ReactNode;
@@ -9,11 +10,13 @@ type TProps = {
 
 const Wrapper = (props: TProps) => {
   return (
-    <ColorArea>
-      <SnackBarArea>
-        <LoadingArea>{props.children}</LoadingArea>
-      </SnackBarArea>
-    </ColorArea>
+    <NavigationContainer>
+      <ColorArea>
+        <SnackBarArea>
+          <LoadingArea>{props.children}</LoadingArea>
+        </SnackBarArea>
+      </ColorArea>
+    </NavigationContainer>
   );
 };
 

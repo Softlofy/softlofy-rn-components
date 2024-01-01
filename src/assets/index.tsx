@@ -1,9 +1,17 @@
 import React from 'react';
+import BackAndroid from './icons/arrow-left-android.svg';
+import BackIos from './icons/arrow-left-ios.svg';
 import Check from './icons/check.svg';
 import Info from './icons/info.svg';
 import Warning from './icons/warning.svg';
 
 const SVGs = {
+  BackAndroid: (height?: number, width?: number, color?: string) => (
+    <BackAndroid height={height} width={width} color={color} />
+  ),
+  BackIos: (height?: number, width?: number, color?: string) => (
+    <BackIos height={height} width={width} color={color} />
+  ),
   Check: (height?: number, width?: number, color?: string) => (
     <Check height={height} width={width} color={color} />
   ),
