@@ -13,13 +13,13 @@ import CustomStatusBar from './CustomStatusBar';
 type TCommonScreenContainer = {
   children: React.ReactNode;
   statusBarBg?: string;
+  barStyle?: StatusBarStyle | null | undefined;
   paddingHorizontal?: number;
   backgroundColor?: string;
   screenTitleProps?: TScreenTitle;
   refreshing?: boolean;
   refreshControlColors?: string[];
   onRefresh?: () => void;
-  barStyle?: StatusBarStyle | null | undefined;
 };
 
 export default function ScrollableScreenContainer(
@@ -35,7 +35,10 @@ export default function ScrollableScreenContainer(
 
   return (
     <SafeAreaView
-      style={[styles.safeArea, {backgroundColor: props.backgroundColor}]}>
+      style={[
+        styles.safeArea,
+        {backgroundColor: props.backgroundColor || themeColor},
+      ]}>
       <CustomStatusBar
         backgroundColor={props.statusBarBg || themeColor}
         barStyle={props.barStyle}

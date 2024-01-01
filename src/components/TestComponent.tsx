@@ -3,18 +3,19 @@ import useColors from '../contexts/ColorContext/useColors';
 import Tag from './Tag';
 import FlexContainer from './FlexContainer';
 import ScrollableScreenContainer from './ScrollableScreenContainer';
+import NonScrollableScreenContainer from './NonScrollableScreenContainer';
 
 const TestComponent = () => {
   const theme = useColors();
 
   return (
-    <ScrollableScreenContainer
-      screenTitleProps={{title: 'test', showBackButton: true}}
-      paddingHorizontal={10}>
+    <NonScrollableScreenContainer
+      screenTitleProps={{title: 'Test', showBackButton: true}}
+      paddingHorizontal={0}>
       <FlexContainer>
         <Tag tag="test" backgroundColor={theme.amber} />
       </FlexContainer>
-    </ScrollableScreenContainer>
+    </NonScrollableScreenContainer>
   );
 };
 
