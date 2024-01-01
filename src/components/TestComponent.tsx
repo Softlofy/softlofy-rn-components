@@ -2,8 +2,8 @@ import React from 'react';
 import useColors from '../contexts/ColorContext/useColors';
 import Tag from './Tag';
 import FlexContainer from './FlexContainer';
-import ScrollableScreenContainer from './ScrollableScreenContainer';
 import NonScrollableScreenContainer from './NonScrollableScreenContainer';
+import Flags from '../assets/flags';
 
 const TestComponent = () => {
   const theme = useColors();
@@ -12,9 +12,7 @@ const TestComponent = () => {
     <NonScrollableScreenContainer
       screenTitleProps={{title: 'Test', showBackButton: true}}
       paddingHorizontal={0}>
-      <FlexContainer>
-        <Tag tag="test" backgroundColor={theme.amber} />
-      </FlexContainer>
+      <FlexContainer>{Flags['BD']()}</FlexContainer>
     </NonScrollableScreenContainer>
   );
 };
