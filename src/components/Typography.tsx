@@ -18,7 +18,7 @@ export default function Typography(props: TTypographyBase) {
   const accentColor = useAccentColor();
 
   const style: TextStyle = {
-    fontSize: props.fontSize || 14,
+    fontSize: props.fontSize || 16,
     textAlign: props.textAlign || 'left',
     color: props.color || accentColor,
     fontWeight: props.fontWeight || 'normal',

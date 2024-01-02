@@ -9,6 +9,7 @@ import React from 'react';
 import ScreenTitle, {TScreenTitle} from './ScreenTitle';
 import useThemeColor from '../hooks/useThemeColor';
 import CustomStatusBar from './CustomStatusBar';
+import useCommonConstants from '../contexts/CommonConstantsContext/useCommonConstants';
 
 type TCommonScreenContainer = {
   children: React.ReactNode;
@@ -26,9 +27,12 @@ export default function ScrollableScreenContainer(
   props: TCommonScreenContainer
 ) {
   const themeColor = useThemeColor();
+  const commonConstants = useCommonConstants();
   const padding = {
     paddingHorizontal:
-      props.paddingHorizontal !== undefined ? props.paddingHorizontal : 16,
+      props.paddingHorizontal !== undefined
+        ? props.paddingHorizontal
+        : commonConstants.SCREEN_PADDING,
   };
 
   const titlePaddingHorizontal = padding.paddingHorizontal || 5;

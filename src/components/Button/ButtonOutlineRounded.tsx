@@ -4,11 +4,14 @@ import React from 'react';
 import {TCommonButton, TPartialButton} from './Button';
 import Typography from '../Typography';
 import useColors from '../../contexts/ColorContext/useColors';
+import useCommonConstants from '../../contexts/CommonConstantsContext/useCommonConstants';
 
 type TButtonFullWidthOutline = TCommonButton & TPartialButton;
 
 export default function ButtonOutlineRounded(props: TButtonFullWidthOutline) {
   const theme = useColors();
+  const commonConstants = useCommonConstants();
+
   const borderColor = {
     borderColor: props.disabled ? theme.gray : props.themeColor,
   };
@@ -21,7 +24,7 @@ export default function ButtonOutlineRounded(props: TButtonFullWidthOutline) {
         {width: props.width || '100%', flex: props.flex},
       ]}
       onPress={props.onPress}
-      activeOpacity={0.8}
+      activeOpacity={commonConstants.ACTIVE_OPACITY}
       disabled={props.disabled}>
       <Typography color={props.disabled ? theme.gray : props.themeColor}>
         {props.title}

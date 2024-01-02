@@ -3,6 +3,7 @@ import React from 'react';
 import useThemeColor from '../hooks/useThemeColor';
 import CustomStatusBar from './CustomStatusBar';
 import ScreenTitle, {TScreenTitle} from './ScreenTitle';
+import useCommonConstants from '../contexts/CommonConstantsContext/useCommonConstants';
 
 type TNonScrollableScreenContainer = {
   children: React.ReactNode;
@@ -18,8 +19,11 @@ export default function NonScrollableScreenContainer(
   props: TNonScrollableScreenContainer
 ) {
   const themeColor = useThemeColor();
+  const commonConstants = useCommonConstants();
   const paddingHorizontal =
-    props.paddingHorizontal !== undefined ? props.paddingHorizontal : 16;
+    props.paddingHorizontal !== undefined
+      ? props.paddingHorizontal
+      : commonConstants.SCREEN_PADDING;
 
   const titlePaddingHorizontal = !paddingHorizontal ? 5 : 0;
 

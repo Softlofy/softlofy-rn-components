@@ -4,11 +4,14 @@ import React from 'react';
 import {TCommonButton, TPartialButton} from './Button';
 import Typography from '../Typography';
 import useColors from '../../contexts/ColorContext/useColors';
+import useCommonConstants from '../../contexts/CommonConstantsContext/useCommonConstants';
 
 type TButtonFullWidthFill = TCommonButton & TPartialButton;
 
 export default function ButtonFillRounded(props: TButtonFullWidthFill) {
   const colors = useColors();
+  const commonConstants = useCommonConstants();
+
   const backgroundColor = {
     backgroundColor: props.disabled ? colors.gray : props.backgroundColor,
   };
@@ -21,7 +24,7 @@ export default function ButtonFillRounded(props: TButtonFullWidthFill) {
         {width: props.width || '100%', flex: props.flex},
       ]}
       onPress={props.onPress}
-      activeOpacity={0.8}
+      activeOpacity={commonConstants.ACTIVE_OPACITY}
       disabled={props.disabled}>
       <Typography color={props.disabled ? colors.black : props.textColor}>
         {props.title}

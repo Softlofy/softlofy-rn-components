@@ -1,5 +1,6 @@
 export type TColors = {
   white: string;
+  light_gray: string;
   black: string;
   slate: string;
   gray: string;

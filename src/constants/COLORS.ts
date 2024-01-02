@@ -2,12 +2,13 @@ import {TColors} from '../types/theme';
 
 const COLORS: TColors = {
   white: '#ffffff',
+  light_gray: '#d1d5db',
   black: '#000000',
-  slate: '#f1f5f9',
-  gray: '#e2e8f0',
-  zinc: '#f4f4f4',
-  neutral: '#a0aec0',
-  stone: '#f9fafb',
+  slate: '#64748b',
+  gray: '#6b7280',
+  zinc: '#71717a',
+  neutral: '#737373',
+  stone: '#78716c',
   red: '#ef4444',
   orange: '#f97316',
   amber: '#f59e0b',
