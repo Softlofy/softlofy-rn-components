@@ -514,9 +514,9 @@ const flags = {
 
 export type TGetFlagParameters = keyof typeof flags;
 
-const getFlag = (name: TGetFlagParameters) => {
-  if (flags[name]) {
-    return flags[name]();
+const getFlag = (name: string) => {
+  if (flags[name as TGetFlagParameters]) {
+    return flags[name as TGetFlagParameters]();
   } else {
     return <Typography>404</Typography>;
   }

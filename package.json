@@ -2,7 +2,34 @@
   "name": "initial-setup",
   "version": "0.0.1",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Softlofy/softlofy-rn-components.git"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "ios",
+    "React",
+    "RN",
+    "Softlofy",
+    "React",
+    "Common Components",
+    "Snack Bar",
+    "Loading",
+    "Toast",
+    "Input Field",
+    "Button",
+    "Mehedi Hasan Siam",
+    "Mukbul Hasan Razib"
+  ],
+  "author": "Softlofy",
+  "bugs": {
+    "url": "https://github.com/Softlofy/softlofy-rn-components/issues"
+  },
+  "homepage": "https://github.com/Softlofy/softlofy-rn-components#readme",
   "scripts": {
+    "build": "rm -rf lib && chmod +x npm-publish.sh && sh ./npm-publish.sh && tsc -p tsconfig.json & tsc -p tsconfig-cjs.json && copyfiles -u 1 src/library/assets/**/* lib/cjs",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
