@@ -3,7 +3,7 @@ import React from 'react';
 import useCommonConstants from '../../contexts/CommonConstantsContext/useCommonConstants';
 import getFlag, {TGetFlagParameters} from '../../assets/flags';
 import Typography from '../Typography';
-import useColors from '../../contexts/ColorContext/useColors';
+import useInputFieldColor from '../../hooks/useInputFieldColor';
 
 type TFlagButton = {
   countryCode: string;
@@ -15,8 +15,8 @@ type TFlagButton = {
 
 const FlagButton = (props: TFlagButton) => {
   const commonConstants = useCommonConstants();
-  const colors = useColors();
-  const backgroundColor = props.bgColor || colors.light_gray;
+  const inputFieldColors = useInputFieldColor();
+  const backgroundColor = props.bgColor || inputFieldColors.backgroundColor;
 
   return (
     <TouchableOpacity
@@ -24,7 +24,7 @@ const FlagButton = (props: TFlagButton) => {
       activeOpacity={commonConstants.ACTIVE_OPACITY}
       style={[style.container, {backgroundColor}]}>
       {getFlag(props.countryCode as TGetFlagParameters)}
-      <Typography color={props.textColor || colors.black}>
+      <Typography color={props.textColor || inputFieldColors.textColor}>
         {props.dialCode}
       </Typography>
     </TouchableOpacity>

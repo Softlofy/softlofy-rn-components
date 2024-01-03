@@ -8,30 +8,34 @@ import FlagButton from './FlagButton';
 import InputFieldPhoneNumber from './InputFieldPhoneNumber';
 import {TCountry} from '../../types/country';
 import countriesJson from '../../assets/CountryCodes.json';
+import CountryListModal from './CountryListModal';
+import {TInputCommonProps} from '../../types/input';
 
-type TPhoneInput = {
-  bgColor?: string;
-  textColor?: string;
-  error?: string;
-  placeholder?: string;
-  placeholderTextColor?: string;
-  cursorColor?: string;
-  onFocus?: () => void;
-  onChangeText?: (text: string) => void;
-  value?: string;
-};
+type TPhoneInput = TInputCommonProps & {};
 
 const PhoneInput = (props: TPhoneInput) => {
   const colors = useColors();
+
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   const [selectedCountry, setSelectedCountry] = useState<TCountry>(
     countriesJson[0]
   );
 
+  const handleOpenModal = () => {
+    setIsOpenModal(true);
+  };
+
   return (
     <FullWidthContainer>
+      <CountryListModal
+        isOpenModal={isOpenModal}
+        setIsOpenModal={setIsOpenModal}
+        setSelectedCountry={setSelectedCountry}
+      />
       <FlexContainer justifyContent="flex-start" gap={10}>
         <FlagButton
+          onPress={handleOpenModal}
           countryCode={selectedCountry.code}
           dialCode={selectedCountry.dial_code}
           bgColor={props.bgColor}

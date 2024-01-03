@@ -1,21 +1,12 @@
 import {TextInput, StyleSheet} from 'react-native';
 import React from 'react';
-import useColors from '../../contexts/ColorContext/useColors';
-import useInputFieldColor from '../../hooks/useInputFieldColor';
+import {TInputCommonProps} from '../types/input';
+import useColors from '../contexts/ColorContext/useColors';
+import useInputFieldColor from '../hooks/useInputFieldColor';
 
-type TInputFieldPhoneNumber = {
-  bgColor?: string;
-  textColor?: string;
-  placeholder?: string;
-  placeholderTextColor?: string;
-  cursorColor?: string;
-  onFocus?: () => void;
-  onChangeText?: (text: string) => void;
-  value?: string;
-  error?: string;
-};
+type TInputField = TInputCommonProps & {};
 
-const InputFieldPhoneNumber = (props: TInputFieldPhoneNumber) => {
+const InputField = (props: TInputField) => {
   const colors = useColors();
   const inputFieldColors = useInputFieldColor();
   const backgroundColor = props.bgColor || inputFieldColors.backgroundColor;
@@ -25,28 +16,24 @@ const InputFieldPhoneNumber = (props: TInputFieldPhoneNumber) => {
   return (
     <TextInput
       style={[
-        styles.input,
+        styles.container,
         {
           backgroundColor,
           borderColor,
           color: props.textColor || inputFieldColors.textColor,
         },
       ]}
-      cursorColor={props.cursorColor || colors.sky}
-      placeholder={props.placeholder}
       placeholderTextColor={
         props.placeholderTextColor || inputFieldColors.placeholderColor
       }
-      onFocus={props.onFocus}
-      onChangeText={props.onChangeText}
-      value={props.value}
+      {...props}
     />
   );
 };
 
 const styles = StyleSheet.create({
-  input: {
-    flex: 1,
+  container: {
+    width: '100%',
     height: 50,
     borderRadius: 25,
     paddingHorizontal: 10,
@@ -55,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default InputFieldPhoneNumber;
+export default InputField;

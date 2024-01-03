@@ -9,6 +9,7 @@ import AM from './am.svg';
 import AO from './ao.svg';
 import AQ from './aq.svg';
 import AR from './ar.svg';
+import AS from './as.svg';
 import AT from './at.svg';
 import AU from './au.svg';
 import AW from './aw.svg';
@@ -265,6 +266,7 @@ const flags = {
   AO: () => <AO height={32} width={32} />,
   AQ: () => <AQ height={32} width={32} />,
   AR: () => <AR height={32} width={32} />,
+  AS: () => <AS height={32} width={32} />,
   AT: () => <AT height={32} width={32} />,
   AU: () => <AU height={32} width={32} />,
   AW: () => <AW height={32} width={32} />,
