@@ -4,19 +4,30 @@ import FlexContainer from '../FlexContainer';
 import FlagButton from './FlagButton';
 import InputFieldPhoneNumber from './InputFieldPhoneNumber';
 import {TCountry} from '../../types/country';
-import countriesJson from '../../assets/CountryCodes.json';
+import countries from '../../assets/CountryCodes.json';
 import CountryListModal from './CountryListModal';
 import {TInputCommonProps} from '../../types/input';
 import InputError from '../InputError';
 
-type TPhoneInput = TInputCommonProps & {};
+type TPhoneInput = TInputCommonProps & {
+  dialCode?: string;
+  setDialCode: (dialCode: string) => void;
+};
 
 const PhoneInput = (props: TPhoneInput) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const defaultSelectedCountry = props.dialCode
+    ? countries.find(item => item.dial_code === props.dialCode) || countries[0]
+    : countries[0];
 
   const [selectedCountry, setSelectedCountry] = useState<TCountry>(
-    countriesJson[0]
+    defaultSelectedCountry
   );
+
+  const handleSetSelectedCountry = (country: TCountry) => {
+    setSelectedCountry(country);
+    props.setDialCode(country.dial_code);
+  };
 
   const handleOpenModal = () => {
     setIsOpenModal(true);
@@ -27,7 +38,7 @@ const PhoneInput = (props: TPhoneInput) => {
       <CountryListModal
         isOpenModal={isOpenModal}
         setIsOpenModal={setIsOpenModal}
-        setSelectedCountry={setSelectedCountry}
+        setSelectedCountry={handleSetSelectedCountry}
       />
       <FlexContainer justifyContent="flex-start" gap={10}>
         <FlagButton

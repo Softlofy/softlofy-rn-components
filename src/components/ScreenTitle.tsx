@@ -3,28 +3,21 @@ import {StyleSheet, View} from 'react-native';
 
 import Spacer from './Spacer';
 import Typography from './Typography';
-import useCustomNavigate from '../hooks/useCustomNavigate';
 import BackButton from './BackButton';
 
 export type TScreenTitle = {
   showBackButton?: boolean;
   customBackIcon?: React.ReactNode;
-  backScreen?: string;
+  onBackClick?: () => void;
   title?: string;
-  showTickMark?: boolean;
-  handleTick?: () => void;
   paddingHorizontal?: number;
   rightComponent?: React.ReactNode;
 };
 
 export default function ScreenTitle(props: TScreenTitle) {
-  const {navigate, goBack} = useCustomNavigate();
-
   const handleNavigate = () => {
-    if (props.backScreen) {
-      navigate(props.backScreen);
-    } else {
-      goBack();
+    if (props.onBackClick) {
+      props.onBackClick();
     }
   };
 

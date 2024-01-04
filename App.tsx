@@ -1,11 +1,12 @@
 import React from 'react';
 import Wrapper from './src/Wrapper';
-import {Text} from 'react-native';
+
+import RemoveAbleComponent from './src/RemoveAbleComponent';
 
 const App = () => {
   return (
     <Wrapper>
-      <Text>React Native</Text>
+      <RemoveAbleComponent />
     </Wrapper>
   );
 };

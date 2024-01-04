@@ -1,6 +1,6 @@
 {
-  "name": "initial-setup",
-  "version": "0.0.1",
+  "name": "softlofy-rn-components",
+  "version": "0.0.9",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -19,9 +19,7 @@
     "Loading",
     "Toast",
     "Input Field",
-    "Button",
-    "Mehedi Hasan Siam",
-    "Mukbul Hasan Razib"
+    "Button"
   ],
   "author": "Softlofy",
   "bugs": {
@@ -29,7 +27,7 @@
   },
   "homepage": "https://github.com/Softlofy/softlofy-rn-components#readme",
   "scripts": {
-    "build": "rm -rf lib && chmod +x npm-publish.sh && sh ./npm-publish.sh && tsc -p tsconfig.json & tsc -p tsconfig-cjs.json && copyfiles -u 1 src/library/assets/**/* lib/cjs",
+    "build": "rmdir -rf lib && chmod +x npm-publish.sh && sh ./npm-publish.sh && tsc -p tsconfig.json & tsc -p tsconfig-cjs.json ",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
@@ -38,14 +36,24 @@
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.9",
-    "@shopify/react-native-skia": "^0.1.230",
     "lodash.debounce": "^4.0.8",
     "react": "18.2.0",
     "react-native": "0.73.1",
     "react-native-reanimated": "^3.6.1",
     "react-native-safe-area-context": "^4.8.2",
     "react-native-screens": "^3.29.0",
-    "react-native-svg": "^14.1.0"
+    "react-native-svg": "^14.1.0",
+    "react-native-svg-transformer": "^1.2.0"
+  },
+  "peerDependencies": {
+    "react-native-reanimated": "^3.6.1",
+    "lodash.debounce": "^4.0.8",
+    "react": "18.2.0",
+    "react-native": "0.73.1",
+    "react-native-safe-area-context": "^4.8.2",
+    "react-native-screens": "^3.29.0",
+    "react-native-svg": "^14.1.0",
+    "react-native-svg-transformer": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -62,7 +70,6 @@
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
-    "react-native-svg-transformer": "^1.2.0",
     "react-test-renderer": "18.2.0",
     "typescript": "5.0.4"
   },
