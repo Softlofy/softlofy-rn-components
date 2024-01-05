@@ -4,6 +4,14 @@ A collection of commonly used components on React Native project developed by [S
 
 ## **Installation:**
 
+There are two ways to use Softlofy RN Components.
+
+### Way 1: Initiate a new project with Softlofy RN Components
+
+    npx softlofy-rn-components-starter <YourProjectName>
+
+### Way 2: Configure with an existing project
+
 **Step 1:** Run `npm i softlofy-rn-components`
 
 **Step 2** Install packages `npm i --dev react-native-svg-transformer & npm i react-native-svg react-native-reanimated`
@@ -119,83 +127,6 @@ Wrap your app by Wrapper
 
 
     export  default  App;
-
-# Hooks
-
-### **useColors**
-
-Will give you a color palette
-**Note:** Color palette is inspired by [Tailwind CSS's Colors](https://tailwindcss.com/docs/customizing-colors)
-You will get the 500 variant's color of tailwind's color palatte.
-
-    const colors = useColors()
-
-will return the following object
-
-    {
-        white:  '#ffffff',
-        light_gray:  '#d1d5db',
-        black:  '#000000',
-        slate:  '#64748b',
-        gray:  '#6b7280',
-        zinc:  '#71717a',
-        neutral:  '#737373',
-        stone:  '#78716c',
-        red:  '#ef4444',
-        orange:  '#f97316',
-        amber:  '#f59e0b',
-        yellow:  '#eab308',
-        lime:  '#84cc16',
-        green:  '#22c55e',
-        emerald:  '#10b981',
-        teal:  '#14b8a6',
-        cyan:  '#06b6d4',
-        sky:  '#0ea5e9',
-        blue:  '#3b82f6',
-        indigo:  '#6366f1',
-        violet:  '#8b5cf6',
-        purple:  '#a855f7',
-        fuchsia:  '#d946ef',
-        pink:  '#ec4899',
-        rose:  '#f43f5e',
-    }
-
-### **useLoading**
-
-    const  {isLoading,  setIsLoading}  =  useLoading();
-
-is loading will return the loading state, and `setIsLoading(stateYouWannaSet: boolean, colorYouWannaSeeTheSpinner?:string)`
-
-### **useSnackBar**
-
-    const  {showSnackBar}  =  useSnackBar();
-
-    showSnackBar(message:string, variant:'success'  |  'error'  |  'warning'  |  'info')
-
-### **useThemeColor**
-
-    const themeColor = useThemeColor()
-
-will return
-
-       if (deviceTheme==="dark"){
-    	    return '#242424'
-       } else{
-           return '#F1F1F1'
-       }
-
-### **useAccentColor**
-
-    const accentColor = useAccentColor()
-
-will return
-
-       if (deviceTheme==="dark"){
-    	    return colors.white
-       } else{
-           return colors.black
-       }
-       // Where colors is the object returned by useColors hook
 
 # Components
 
@@ -342,3 +273,80 @@ Everything from **_NonScrollableScreenContainer_** &
 | backgroundColor | `string` | true | N/A
 | color | `string` | false | white
 | flex | `number` | false | 0
+
+# Hooks
+
+### **useColors**
+
+Will give you a color palette
+**Note:** Color palette is inspired by [Tailwind CSS's Colors](https://tailwindcss.com/docs/customizing-colors)
+You will get the 500 variant's color of tailwind's color palatte.
+
+    const colors = useColors()
+
+will return the following object
+
+    {
+        white:  '#ffffff',
+        light_gray:  '#d1d5db',
+        black:  '#000000',
+        slate:  '#64748b',
+        gray:  '#6b7280',
+        zinc:  '#71717a',
+        neutral:  '#737373',
+        stone:  '#78716c',
+        red:  '#ef4444',
+        orange:  '#f97316',
+        amber:  '#f59e0b',
+        yellow:  '#eab308',
+        lime:  '#84cc16',
+        green:  '#22c55e',
+        emerald:  '#10b981',
+        teal:  '#14b8a6',
+        cyan:  '#06b6d4',
+        sky:  '#0ea5e9',
+        blue:  '#3b82f6',
+        indigo:  '#6366f1',
+        violet:  '#8b5cf6',
+        purple:  '#a855f7',
+        fuchsia:  '#d946ef',
+        pink:  '#ec4899',
+        rose:  '#f43f5e',
+    }
+
+### **useLoading**
+
+    const  {isLoading,  setIsLoading}  =  useLoading();
+
+is loading will return the loading state, and `setIsLoading(stateYouWannaSet: boolean, colorYouWannaSeeTheSpinner?:string)`
+
+### **useSnackBar**
+
+    const  {showSnackBar}  =  useSnackBar();
+
+    showSnackBar(message:string, variant:'success'  |  'error'  |  'warning'  |  'info')
+
+### **useThemeColor**
+
+    const themeColor = useThemeColor()
+
+will return
+
+       if (deviceTheme==="dark"){
+    	    return '#242424'
+       } else{
+           return '#F1F1F1'
+       }
+
+### **useAccentColor**
+
+    const accentColor = useAccentColor()
+
+will return
+
+       if (deviceTheme==="dark"){
+    	    return colors.white
+       } else{
+           return colors.black
+       }
+       // Where colors is the object returned by useColors hook
