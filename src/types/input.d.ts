@@ -1,3 +1,5 @@
+import {KeyboardTypeOptions} from 'react-native';
+
 export type TInputCommonProps = {
   bgColor?: string;
   textColor?: string;
@@ -8,4 +10,6 @@ export type TInputCommonProps = {
   onFocus?: () => void;
   onChangeText?: (text: string) => void;
   value?: string;
+  keyboardType?: KeyboardTypeOptions | undefined;
+  leftIcon?: React.ReactNode;
 };
