@@ -14,7 +14,7 @@ There are two ways to use Softlofy RN Components.
 
 **Step 1:** Run `npm i softlofy-rn-components`
 
-**Step 2** Install packages `npm i --dev react-native-svg-transformer & npm i react-native-svg react-native-reanimated`
+**Step 2** Install packages `npm i react-native-svg-transformer react-native-svg react-native-reanimated`
 
 **Step 3** Add `react-native-reanimated/plugin` plugin to your `babel.config.js`.
 

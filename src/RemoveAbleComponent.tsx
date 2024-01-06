@@ -2,11 +2,13 @@ import {View} from 'react-native';
 import React from 'react';
 
 import InputField from './components/InputField';
+import PhoneInput from './components/PhoneInput';
 
 const RemoveAbleComponent = () => {
+  const [value, setValue] = React.useState('');
   return (
     <View>
-      <InputField variant="password" placeholder="Remove" />
+      <PhoneInput setDialCode={setValue} />
     </View>
   );
 };
